@@ -48,6 +48,7 @@ This project is split into two folders:
 git clone https://github.com/YOUR-USERNAME/banking-dashboard.git
 
 cd banking-dashboard
+
 ---
 ### ⚙️ 2. Set Up MySQL Database
 
