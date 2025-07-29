@@ -1,4 +1,4 @@
-# 💼 Banking Dashboard Web Application
+# 💼 Banking Dashboard Application
 
 This is a full-stack **Banking Dashboard** system that allows user registration, login, transfers between users, and viewing of user details and transaction history. It also features data export and visual feedback on account status.
 
