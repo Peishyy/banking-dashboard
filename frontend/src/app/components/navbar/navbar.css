@@ -1,0 +1,23 @@
+.navbar {
+    background-color: #f8f9fa;
+    padding: 10px;
+  }
+  
+  .nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px; /* adds space between items */
+    padding: 0;
+    margin: 0;
+  }
+  
+  .nav-links li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+  }
+  
+  .nav-links li a:hover {
+    color: #007bff;
+  }
+  

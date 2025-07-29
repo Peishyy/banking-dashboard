@@ -1,0 +1,26 @@
+<div class="container">
+  <h2>🏦 Banking Dashboard</h2>
+
+  <div class="summary">
+    <div class="card">
+      <h3>Total Users</h3>
+      <p>{{ totalUsers }}</p>
+    </div>
+    <div class="card">
+      <h3>Total Transactions</h3>
+      <p>{{ totalTransactions }}</p>
+    </div>
+    <div class="card">
+      <h3>Total Balance</h3>
+      <p>KES {{ totalBalance }}</p>
+    </div>
+  </div>
+
+  <div class="chart-container" style="height: 300px; width: 100%;">
+    <canvas baseChart
+            [data]="chartData"
+            [options]="chartOptions"
+            [type]="'bar'">
+    </canvas>
+  </div>
+</div>

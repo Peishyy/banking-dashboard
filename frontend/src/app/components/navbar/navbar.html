@@ -1,0 +1,11 @@
+<nav class="navbar">
+    <a *ngIf="!isLoggedIn" routerLink="/login">Login</a>
+    <a *ngIf="!isLoggedIn" routerLink="/register">Register</a>
+    <ul class="nav-links">
+      <li><a *ngIf="isLoggedIn" routerLink="/dashboard">Dashboard</a></li>
+      <li><a *ngIf="isLoggedIn" routerLink="/users">Users</a></li>
+      <li><a *ngIf="isLoggedIn" routerLink="/transfer">Transfer</a></li>
+      <li><a *ngIf="isLoggedIn" routerLink="/transactions">Transactions</a></li>
+    </ul>
+  </nav>
+  

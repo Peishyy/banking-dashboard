@@ -1,0 +1,33 @@
+h2 {
+    color: #0a66c2;
+    margin-bottom: 10px;
+  }
+  .dashboard-title {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 28px;
+    color: #333;
+  }
+  
+  .summary {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 40px;
+  }
+  
+  .card {
+    background-color: #f0f0f0;
+    padding: 20px;
+    border-radius: 10px;
+    flex: 1;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  }
+  
+  .chart-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  

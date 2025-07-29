@@ -1,0 +1,36 @@
+<h2>User Details</h2>
+
+<div *ngIf="user">
+  <p><strong>Name:</strong> {{ user.name }}</p>
+  <p><strong>Email:</strong> {{ user.email }}</p>
+  <p><strong>Balance:</strong> KES {{ user.balance }}</p>
+</div>
+
+<h3>Transaction History</h3>
+
+<table *ngIf="transactions.length > 0; else noTxns">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Sender</th>
+      <th>Receiver</th>
+      <th>Amount</th>
+      <th>Note</th>
+      <th>Date</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let txn of transactions">
+      <td>{{ txn.id }}</td>
+      <td>{{ txn.sender_id }}</td>
+      <td>{{ txn.receiver_id }}</td>
+      <td>{{ txn.amount }}</td>
+      <td>{{ txn.note || '-' }}</td>
+      <td>{{ txn.timestamp | date:'short' }}</td>
+    </tr>
+  </tbody>
+</table>
+
+<ng-template #noTxns>
+  <p>No transactions found for this user.</p>
+</ng-template>

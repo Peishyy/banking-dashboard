@@ -1,0 +1,30 @@
+<h2>💸 Transfer Money</h2>
+
+<form (ngSubmit)="transfer()" class="form">
+  <label>From:</label>
+  <select [(ngModel)]="fromUser" name="fromUser" required>
+    <option [value]="''" disabled selected>Select sender</option>
+    <option *ngFor="let user of users" [value]="user.id">
+      {{ user.name }} (KES {{ user.balance }})
+    </option>
+  </select>
+
+  <label>To:</label>
+  <select [(ngModel)]="toUser" name="toUser" required>
+    <option [value]="''" disabled selected>Select receiver</option>
+    <option *ngFor="let user of users" [value]="user.id">
+      {{ user.name }} (KES {{ user.balance }})
+    </option>
+  </select>
+
+  <label>Amount (KES):</label>
+  <input type="number" [(ngModel)]="amount" name="amount" required min="1" />
+
+  <label>Note (optional):</label>
+  <input type="text" [(ngModel)]="note" name="note" />
+
+  <button type="submit">Send Money</button>
+</form>
+
+<div *ngIf="message" class="success">{{ message }}</div>
+<div *ngIf="error" class="error">{{ error }}</div>

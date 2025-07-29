@@ -1,0 +1,23 @@
+<h2>Transaction History</h2>
+<table>
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Sender ID</th>
+      <th>Receiver ID</th>
+      <th>Amount (KES)</th>
+      <th>Note</th>
+      <th>Timestamp</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let txn of transactions">
+      <td>{{ txn.id }}</td>
+      <td>{{ txn.sender_id }}</td>
+      <td>{{ txn.receiver_id }}</td>
+      <td>{{ txn.amount }}</td>
+      <td>{{ txn.note || '-' }}</td>
+      <td>{{ txn.timestamp | date:'short' }}</td>
+    </tr>
+  </tbody>
+</table>
