@@ -60,6 +60,8 @@ mysql -u root -p < banking.sql
 
 Enter root password:
 
+-Change DB_PASSWORD in .env file in backend folder to your root password
+
 ### 🚀 3. Run the Backend
 - Prerequisites:  
 -Node.js & npm installed
