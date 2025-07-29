@@ -44,8 +44,9 @@ This project is split into two folders:
 - backend/ → Node.js API and database connection
 
 ### 🧱 1. Clone the Project
-bash
+
 git clone https://github.com/YOUR-USERNAME/banking-dashboard.git
+
 cd banking-dashboard
 ---
 ### ⚙️ 2. Set Up MySQL Database
