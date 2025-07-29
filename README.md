@@ -40,11 +40,11 @@ This is a full-stack **Banking Dashboard** system that allows user registration,
 ## ⚙️ How to Run the Project Locally
 
 This project is split into two folders:
-- `frontend/` → Angular frontend
-- `backend/` → Node.js API and database connection
+- frontend/ → Angular frontend
+- backend/ → Node.js API and database connection
 
 ### 🧱 1. Clone the Project
-```bash
+bash
 git clone https://github.com/YOUR-USERNAME/banking-dashboard.git
 cd banking-dashboard
 ---
@@ -83,38 +83,26 @@ ng test
 
 🧠 Assumptions & Design Decisions
 Only users with valid JWT tokens can access the dashboard, transfers, users, and transactions pages.
-
 A user cannot transfer money to themselves.
-
 Transfers are blocked if sender’s balance is insufficient.
-
 Passwords are hashed using bcrypt for security.
-
 Data in the frontend is refreshed dynamically or upon route navigation.
-
-Error messages are displayed directly on the UI for user clarity.
-
 The app shows low-balance accounts in red to warn the admin.
-
 Transactions are sorted in descending order by default.
-
 Forms include client-side validation using Angular forms.
 
 📝 How to Register and Use the System
-Go to http://localhost:4200/register
+- Go to http://localhost:4200/register
 
-Fill in your name, email, password, and choose account type (e.g., Savings or Checking)
+- Fill in your name, email, password, and choose account type (e.g., Savings or Checking)
 
-After registering, you'll be redirected to login
+- After registering, you'll be redirected to login
 
-Once logged in, navigate using the top navbar:
+- Once logged in, navigate using the top navbar:
 
 Dashboard
-
 Users
-
 Transfer
-
 Transactions
 
 To export user or transaction data, click the ⬇️ Export CSV button on respective pages.
