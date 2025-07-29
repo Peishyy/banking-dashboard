@@ -65,6 +65,7 @@ Enter root password:
 ### 🚀 3. Run the Backend
 - Prerequisites:  
 -Node.js & npm installed
+
 -MySQL service running
 
 npm install
@@ -75,6 +76,7 @@ npm run dev
 
 ### 💻 4. Run the Frontend
 - Prerequisites:
+
 -Angular CLI installed: 
 
 npm install -g @angular/cli
