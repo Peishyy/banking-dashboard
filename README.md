@@ -65,33 +65,49 @@ npm run dev
 
 💻 4. Run the Frontend
 Prerequisites:
+
 Angular CLI installed: npm install -g @angular/cli
 
 cd frontend
+
 npm install
+
 ng serve
+
 Navigate to http://localhost:4200 in your browser.
 
 🧪 Testing & Validation
+
 Unit tests implemented using Jasmine/Karma
 
 Run using: 
+
 cd frontend
+
 ng test
 
 ✅ All specs are passing (15+)
 
 🧠 Assumptions & Design Decisions
+
 Only users with valid JWT tokens can access the dashboard, transfers, users, and transactions pages.
+
 A user cannot transfer money to themselves.
+
 Transfers are blocked if sender’s balance is insufficient.
+
 Passwords are hashed using bcrypt for security.
+
 Data in the frontend is refreshed dynamically or upon route navigation.
+
 The app shows low-balance accounts in red to warn the admin.
+
 Transactions are sorted in descending order by default.
+
 Forms include client-side validation using Angular forms.
 
 📝 How to Register and Use the System
+
 - Go to http://localhost:4200/register
 
 - Fill in your name, email, password, and choose account type (e.g., Savings or Checking)
@@ -101,14 +117,18 @@ Forms include client-side validation using Angular forms.
 - Once logged in, navigate using the top navbar:
 
 Dashboard
+
 Users
+
 Transfer
+
 Transactions
 
 To export user or transaction data, click the ⬇️ Export CSV button on respective pages.
 
 
 🔒 Logout
+
 A logout button is shown in the navbar when you're logged in. It clears the JWT token and redirects to login.
 
 👩‍💻 Author
