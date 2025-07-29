@@ -52,16 +52,18 @@ cd banking-dashboard
 ---
 ### ⚙️ 2. Set Up MySQL Database
 
-- Import the schema and sample data using the following command
+cd backend
+
+- Import the schema and sample data using the following command:
   
-mysql -u root -p < backend/banking.sql
+mysql -u root -p < banking.sql
+
+Enter root password:
 
 ### 🚀 3. Run the Backend
 - Prerequisites:  
 -Node.js & npm installed
 -MySQL service running
-
-cd backend
 
 npm install
 
