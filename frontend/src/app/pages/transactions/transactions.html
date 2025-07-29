@@ -1,4 +1,26 @@
 <h2>Transaction History</h2>
+
+<div class="controls">
+  <input
+    type="text"
+    [(ngModel)]="searchQuery"
+    (input)="onSearchChange()"
+    placeholder="🔍 Search sender, receiver, note..."
+  />
+
+  <button (click)="toggleSort('amount')">
+    Sort by Amount
+    <span *ngIf="sortField === 'amount'">({{ sortOrder === 'asc' ? '⬆️' : '⬇️' }})</span>
+  </button>
+
+  <button (click)="toggleSort('timestamp')">
+    Sort by Date
+    <span *ngIf="sortField === 'timestamp'">({{ sortOrder === 'asc' ? '⬆️' : '⬇️' }})</span>
+  </button>
+
+  <button (click)="exportToCSV()" class="btn-export">⬇️ Export CSV</button>
+</div>
+
 <table>
   <thead>
     <tr>
@@ -11,7 +33,7 @@
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let txn of transactions">
+    <tr *ngFor="let txn of paginatedTransactions">
       <td>{{ txn.id }}</td>
       <td>{{ txn.sender_id }}</td>
       <td>{{ txn.receiver_id }}</td>
@@ -21,3 +43,57 @@
     </tr>
   </tbody>
 </table>
+
+<!-- Pagination Controls -->
+<div class="pagination">
+  <button (click)="changePage(currentPage - 1)" [disabled]="currentPage === 1">⬅️ Prev</button>
+  <span>Page {{ currentPage }} of {{ totalPages() }}</span>
+  <button (click)="changePage(currentPage + 1)" [disabled]="currentPage === totalPages()">Next ➡️</button>
+</div>
+
+<!-- Optional Styles -->
+<style>
+  .controls {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+  }
+
+  input, select {
+    padding: 0.4rem;
+    font-size: 14px;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 1rem;
+  }
+
+  th, td {
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    text-align: left;
+  }
+
+  .pagination {
+    margin-top: 1rem;
+  }
+
+  button {
+    padding: 0.4rem 0.8rem;
+    cursor: pointer;
+  }
+
+  .btn-export {
+    background-color: #008cba;
+    color: white;
+    border: none;
+    border-radius: 3px;
+  }
+
+  .btn-export:hover {
+    background-color: #005f7a;
+  }
+</style>

@@ -1,11 +1,16 @@
-<nav class="navbar">
-    <a *ngIf="!isLoggedIn" routerLink="/login">Login</a>
-    <a *ngIf="!isLoggedIn" routerLink="/register">Register</a>
+<nav class="navbar" *ngIf="shouldShowNavbar()">
     <ul class="nav-links">
-      <li><a *ngIf="isLoggedIn" routerLink="/dashboard">Dashboard</a></li>
-      <li><a *ngIf="isLoggedIn" routerLink="/users">Users</a></li>
-      <li><a *ngIf="isLoggedIn" routerLink="/transfer">Transfer</a></li>
-      <li><a *ngIf="isLoggedIn" routerLink="/transactions">Transactions</a></li>
+      <li><a routerLink="/dashboard">Dashboard</a></li>
+      <li><a routerLink="/users">Users</a></li>
+      <li><a routerLink="/transfer">Transfer</a></li>
+      <li><a routerLink="/transactions">Transactions</a></li>
+      <li><a (click)="logout()" style="cursor: pointer;">Logout</a></li>
     </ul>
+  </nav>
+  
+  <!-- If not logged in and not on hidden routes -->
+  <nav class="navbar" *ngIf="!isLoggedIn() && router.url !== '/login' && router.url !== '/register'">
+    <a routerLink="/login">Login</a>
+    <a routerLink="/register">Register</a>
   </nav>
   

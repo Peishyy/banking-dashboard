@@ -1,23 +1,31 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { TestBed } from '@angular/core/testing';
+import { UserDetailComponent } from './user-detail';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
+import { ActivatedRoute } from '@angular/router';
+import { of } from 'rxjs';
 
-import { UserDetail } from './user-detail';
-
-describe('UserDetail', () => {
-  let component: UserDetail;
-  let fixture: ComponentFixture<UserDetail>;
-
+describe('UserDetailComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [UserDetail]
-    })
-    .compileComponents();
-
-    fixture = TestBed.createComponent(UserDetail);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
+      imports: [UserDetailComponent, HttpClientTestingModule],
+      providers: [
+        {
+          provide: ActivatedRoute,
+          useValue: {
+            snapshot: {
+              paramMap: {
+                get: (key: string) => '1' // mock user ID
+              }
+            }
+          }
+        }
+      ]
+    }).compileComponents();
   });
 
   it('should create', () => {
+    const fixture = TestBed.createComponent(UserDetailComponent);
+    const component = fixture.componentInstance;
     expect(component).toBeTruthy();
   });
 });

@@ -9,9 +9,15 @@
   <label>Password:</label>
   <input type="password" [(ngModel)]="password" name="password" required />
 
+  <label>Account Type:</label>
+  <select [(ngModel)]="accountType" name="accountType" required>
+    <option value="" disabled selected>Select Account Type</option>
+    <option value="savings">Savings</option>
+    <option value="checking">Checking</option>
+  </select>
+
   <button type="submit">Register</button>
   <p>Already have an account? <a routerLink="/login">Log in</a></p>
-
 </form>
 
 <p *ngIf="success" style="color: green">{{ success }}</p>

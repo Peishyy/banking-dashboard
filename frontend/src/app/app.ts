@@ -9,5 +9,8 @@ import { NavbarComponent } from './components/navbar/navbar';
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
-export class AppComponent {}
+export class AppComponent {
+  title = 'Banking Dashboard'; 
+}
+
 
