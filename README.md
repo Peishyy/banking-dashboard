@@ -44,22 +44,22 @@ This project is split into two folders:
 - backend/ → Node.js API and database connection
 
 ### 🧱 1. Clone the Project
-
+```bash
 git clone https://github.com/YOUR-USERNAME/banking-dashboard.git
 
 cd banking-dashboard
-
+```
 ---
 ### ⚙️ 2. Set Up MySQL Database
-
+```bash
 cd backend
-
+```
 - Import the schema and sample data using the following command:
-  
+```bash  
 mysql -u root -p < banking.sql
 
 Enter root password:
-
+```
 - Change DB_PASSWORD in .env file in backend folder to your root password.
 
 ### 🚀 3. Run the Backend
@@ -67,18 +67,18 @@ Enter root password:
 -Node.js & npm installed
 
 -MySQL service running
-
+```bash
 npm install
 
 npm run dev
-
+```
 - This runs Express server on http://localhost:5000
 
 ### 💻 4. Run the Frontend
 - Prerequisites:
 
 -Angular CLI installed: 
-
+```bash
 npm install -g @angular/cli
 
 cd frontend
@@ -86,18 +86,18 @@ cd frontend
 npm install
 
 ng serve
-
+```
 - Navigate to http://localhost:4200 in your browser.
 
 ## 🧪 Testing & Validation
 
 - Unit tests implemented using Jasmine/Karma
 - Run using: 
-
+```bash
 cd frontend
 
 ng test
-
+```
 ✅ All specs are passing (15+)
 
 ## 🧠 Assumptions & Design Decisions
